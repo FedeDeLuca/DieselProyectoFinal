@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+      <div class="col-11 col-md-8 col-lg-5">
+          <form class="container bg-light py-4" action="login" method="post">
+            <label for="user" class="form-label">Usuario</label>
+            <input type="text" name="user" id="user" class="form-control" autocomplete="username" autofocus>
+            <label for="pass" class="form-label mt-3">Contraseña</label>
+            <input type="password" id="pass" class="form-control" name="pass" autocomplete="current-password" >
+            {{#if message }}
+            <div class="alert alert-danger mt-3" role="alert">{{message}}</div>
+
+            {{/if}}
+            <button type="submit" class="btn btn-primary mt-4">
+              Entrar
+            </button>
+           
+            </form> 
+            
+      </div>
+  </div>
+  
+</div>

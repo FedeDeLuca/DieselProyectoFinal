@@ -1,0 +1,52 @@
+<body class="body-interactive">
+<div class="container-fluid d-flex justify-content-center">
+    <div class="row col-12 col-lg-10">
+<table class="table col-12">
+  <thead>
+      <thead>
+        <tr>
+          <th colspan="8">
+          </th>
+        </tr>
+      </thead>
+      <thead>
+      <tr class="mb-2 text-center">
+          <th colspan="8">
+          <a href="additem" class="btn btn-primary text-white bi bi-folder-plus">     Agregar articulo</a>
+          </th>
+      </tr>
+      </thead>
+    <tr class="bg-light">
+      <th scope="col">ID</th>
+      <th scope="col">NOMBRE</th>
+      <th scope="col">MARCA</th>
+      <th scope="col">MODELO</th>
+      <th scope="col">DESCRIPCION</th>
+      <th scope="col">PRECIO</th>
+      <th scope="col">IMAGEN</th>
+      <th scope="col">ACCIONES</th>
+    </tr> 
+  </thead>
+  <tbody class="bg-light">
+{{#each products}}
+    <tr>
+      <td>{{id}}</td>
+      <td>{{name}}</td>
+      <td>{{origin}}</td>
+      <td>${{price}}</td>
+      <td><img src="{{imgUrl}}" alt="{{name}}"></td>
+      <td>
+        <a href="addItem/handleEdit/{{id}}" class="pe-3 fs-5 text-warning bi bi-pencil"></a>
+        <a href="addItem/handleEdit/{{id}}" class="text-danger fs-5 bi bi-trash"></a>
+      </td>
+    </tr>
+{{/each}}
+</table>
+      <thead>
+        <tr>
+          <th colspan="8" class="container-fluid">
+             
+          </th>
+        </tr>
+      </thead>
+</div>

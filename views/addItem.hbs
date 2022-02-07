@@ -1,0 +1,79 @@
+<body class=" pb-5 body-interactive">
+    <nav class="navbar navbar-light bg-dark">
+        <div class="container-fluid">
+            <div class="col-6 col-lg-6 d-flex justify-content-start">
+                <a class="navbar-brand text-white text-decoration-none d-flex align-items-center" href="/crud">
+                     <i class="bi bi-arrow-left-square text-white fs-3">  Atras</i>
+                </a>
+            </div>
+            <div class="col-6 col-lg-6 d-flex justify-content-end text-white">
+             <ul>
+                <li class="nav-link">
+                    <a href="/login/logout" class="nav-link btn btn-danger text-white" >Logout  <i class="bi bi-door-closed fs-5 text-white"></i></button></a> 
+                </li>
+             </ul>
+            </div> 
+        </div>
+    </nav>
+    <section class="pb-5">
+        <div class="container text-center text-white my-5">
+    <i class="bi bi-folder-plus fs-2"> Agregar articulo</i>
+</div>
+
+<div class="container py-5 px-5 bg-light">
+<form class="bg-light" action="/addItem" method="POST" enctype="multipart/form-data">
+    {{#each arrWarning}}
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+  </svg>
+  <div>
+    {{msg}}
+  </div>
+    </div>
+        {{/each}}
+    {{#if messageImg}}
+  <div class="alert alert-danger d-flex align-items-center" role="alert">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+    </svg>
+      <div>
+        {{messageImg}}
+      </div>
+    </div>
+    {{/if}}
+  <div class="mb-3 bg-light">
+    <label for="name" class="form-label">Nombre</label>
+    <input type="text" name="name" class="form-control" id="name"
+    {{#if formData.name}} value="{{formData.name}}" {{/if}}>
+  </div>
+      <div class="mb-3">
+    <label for="mark" class="form-label">Marca</label>
+    <input type="text" name="mark" class="form-control" id="mark"
+    {{#if formData.mark}} value="{{formData.mark}}" {{/if}}>
+  </div>
+    <div class="mb-3">
+    <label for="model" class="form-label">Modelo</label>
+    <input type="text" name="model" class="form-control" id="model"
+    {{#if formData.model}} value="{{formData.model}}" {{/if}}>
+  </div>
+      <div class="mb-3">
+    <label for="description" class="form-label">Descripcion</label>
+    <textarea name="Description" class="form-control" id="Description" rows="6" cols="48" maxlength="250">{{formData.Description}}</textarea>
+  </div>
+    <div class="mb-3">
+    <label for="price" class="form-label">Precio</label>
+    <input type="text" name="price" class="form-control" id="price"
+    {{#if formData.price}} value="{{formData.price}}" {{/if}}>
+  </div>
+  <div class="mb-3">
+    <label for="image" class="form-label">Imagen</label>
+    <input type="file" name="image" class="form-control" id="image">
+  </div>
+  <button type="submit" class="btn btn-success me-2 bi bi-check-square text-white"> Aceptar</button>
+  <a href="/crud" class="btn btn-secondary text-white bi bi-x-square"> Cancelar</a>
+</form>
+</div>
+    </section>
+   
+</body>
